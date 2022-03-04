@@ -1,6 +1,8 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const productoRouter = require('./routes/productoRoutes.js')
+const supermercadoRouter = require('./routes/supermercadoRoutes')
+
 require('./config/db.js')
 
 //Se crea una instancia de express
@@ -17,4 +19,5 @@ server.listen(4000, () => {
 });
 
 //Rutas
-server.use('/productos', productoRouter)
+server.use('/productos', productoRouter);
+server.use('/supermercados', supermercadoRouter);

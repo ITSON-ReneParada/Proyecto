@@ -5,10 +5,13 @@ const { createSupermercado, deleteSupermercado, editSupermercado, getAllSupermer
 
 supermercadoRouter.get('/all', getAllSupermercados);
 
-productoRouter.get('/find/:idProducto', getSupermercado);
+supermercadoRouter.get('/find/:idSupermercado', getSupermercado);
 
-productoRouter.post('/new', createSupermercado);
+supermercadoRouter.post('/new', createSupermercado);
 
-productoRouter.put('/edit/:idProducto', editSupermercado);
+supermercadoRouter.put('/edit/:idSupermercado', editSupermercado);
 
-productoRouter.delete('/delete/:idProducto', deleteSupermercado);
+supermercadoRouter.delete('/delete/:idSupermercado', deleteSupermercado);
+
+
+module.exports = supermercadoRouter;
