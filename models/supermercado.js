@@ -7,12 +7,13 @@ module.exports = (sequelize, type) => {
         },
         nombre: {
             type: type.STRING
-        }
-      /*    productos: {
+        },
+        idProducto: {
+            type: type.INTEGER,
 
-        }  */
+        }
     });
     return Supermercado;
 
-
+    Supermercado.hasMany(Supermercado, { foreingKey: "idProducto" });
 };

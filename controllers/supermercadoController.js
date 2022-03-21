@@ -1,7 +1,7 @@
 const db = require('../config/db.js');
 
 module.exports.getAllSupermercados = (req, res) => {
-    db.Supermercado.findAll().then(Supermercados => res.json(Supermercados))
+    db.Producto.findAll().then(Productos => res.json(Productos))
 };
 
 module.exports.createSupermercado = (req, res) => {

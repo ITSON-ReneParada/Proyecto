@@ -1,5 +1,3 @@
-
-
 module.exports = (sequelize, type) => {
     const Producto = sequelize.define('productos', {
         idProducto: {
@@ -12,7 +10,11 @@ module.exports = (sequelize, type) => {
         },
         precio: {
             type: type.FLOAT
+        },
+        irregularidad: {
+            type: type.INTEGER
         }
+
     });
 
     return Producto;
