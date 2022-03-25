@@ -1,12 +1,13 @@
 const Sequelize = require('sequelize');
+require('dotenv').config();
 
 //Se importa el modelo de 
 const ProductoModel = require('../models/producto');
 const SupermercadoModel = require('../models/supermercado');
 
-const sequelize = new Sequelize('proyectodb', 'root', '', {
-    host: '127.0.0.1',
-    port: '3306',
+const sequelize = new Sequelize(process.env.DB_NAME, process.env.DB_USER, '', {
+    host: process.env.HOST,
+    port: process.env.DB_PORT,
     dialect: 'mysql',
     define: {
         timestamps: false

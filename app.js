@@ -3,6 +3,7 @@ const bodyParser = require('body-parser');
 const productoRouter = require('./routes/productoRoutes.js')
 const supermercadoRouter = require('./routes/SupermercadoRoutes.js')
 const reporteRouter = require('./routes/reporteRoutes.js')
+require('dotenv').config()
 require('./config/db.js')
 
 //Se crea una instancia de express
@@ -14,7 +15,7 @@ server.use(bodyParser.urlencoded({ extended: true }));
 
 
 //Se lanza el servidor en el puerto 4000
-server.listen(4000, () => {
+server.listen(process.env.SERVER_PORT, () => {
     console.log('Servidor corriendo');
 });
 

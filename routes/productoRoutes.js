@@ -3,7 +3,7 @@ const productoRouter = express.Router();
 const { getAllProductos, createProducto, editProducto, deleteProducto, getProducto } = require('../controllers/productoController.js');
 
 
-supermercadoRouter
+productoRouter
 .route('/')
 .get(getAllProductos)
 .get(getProducto)
