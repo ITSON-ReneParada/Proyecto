@@ -4,8 +4,9 @@ require('dotenv').config();
 //Se importa el modelo de 
 const ProductoModel = require('../models/producto');
 const SupermercadoModel = require('../models/supermercado');
+const ReportesModel = require('../models/reporte');
 
-const sequelize = new Sequelize(process.env.DB_NAME, process.env.DB_USER, '', {
+const sequelize = new Sequelize(process.env.DB_NAME, process.env.DB_USER, 'root', {
     host: process.env.HOST,
     port: process.env.DB_PORT,
     dialect: 'mysql',
@@ -23,6 +24,7 @@ const sequelize = new Sequelize(process.env.DB_NAME, process.env.DB_USER, '', {
 //Se lanza la funcion para crear objeto
 const Producto = ProductoModel(sequelize, Sequelize);
 const Supermercado = SupermercadoModel(sequelize, Sequelize);
+const Reportes = ReportesModel(sequelize, Sequelize);
 
 
 sequelize.sync({ force: false })
@@ -33,5 +35,6 @@ sequelize.sync({ force: false })
 
 module.exports = {
     Producto,
-    Supermercado
+    Supermercado,
+    Reportes
 }

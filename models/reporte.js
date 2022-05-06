@@ -6,9 +6,7 @@ module.exports = (sequelize, type) => {
             autoIncrement: true
         },
         idSupermercado: {
-            type: type.INTEGER,
-            primaryKey: true,
-            autoIncrement: true
+            type: type.INTEGER
         }
 
 
